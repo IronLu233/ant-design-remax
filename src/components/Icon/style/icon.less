@@ -1,0 +1,100 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("./iconfont.ttf?t=1579073174218") format("truetype");
+}
+
+@import "../../style/themes/default.less";
+
+.ram-icon {
+  font-family: "iconfont" !important;
+  font-size: @icon-size-md;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  width: @icon-size-md;
+  height: @icon-size-md;
+
+  &-xxs {
+    width: @icon-size-xxs;
+    height: @icon-size-xxs;
+  }
+
+  &-xs {
+    width: @icon-size-xs;
+    height: @icon-size-xs;
+  }
+
+  &-sm {
+    width: @icon-size-sm;
+    height: @icon-size-sm;
+  }
+
+  &-md {
+    width: @icon-size-md;
+    height: @icon-size-md;
+  }
+
+  &-lg {
+    width: @icon-size-lg;
+    height: @icon-size-lg;
+  }
+
+  &-loading {
+    animation: cirle-anim 1s linear infinite;
+  }
+
+  @keyframes cirle-anim {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+.ram-icon-check-circle:before {
+  content: "\e77d";
+}
+
+.ram-icon-close-circle:before {
+  content: "\e77e";
+}
+
+.ram-icon-right:before {
+  content: "\e7eb";
+}
+
+.ram-icon-left:before {
+  content: "\e7ec";
+}
+
+.ram-icon-up:before {
+  content: "\e7ed";
+}
+
+.ram-icon-down:before {
+  content: "\e7ee";
+}
+
+.ram-icon-check:before {
+  content: "\e7fc";
+}
+
+.ram-icon-ellipsis:before {
+  content: "\e7fd";
+}
+
+.ram-icon-close:before {
+  content: "\e7fe";
+}
+
+.ram-icon-check-circle-fill:before {
+  content: "\e844";
+}
+
+.ram-icon-close-circle-fill:before {
+  content: "\e845";
+}
+
+.ram-icon-search:before {
+  content: "\e8ef";
+}

@@ -1,0 +1,29 @@
+{
+  "name": "remax-template",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Starter template for Remax apps",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Wei Zhu <yesmeck@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "remax build -t alipay -w",
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production remax build -t alipay"
+  },
+  "dependencies": {
+    "@types/react": "^16.9.1",
+    "less": "^3.10.3",
+    "react": "^16.8.6",
+    "react-use": "^13.15.0",
+    "remax": "^1.11.2",
+    "remax-cli": "^1.11.2",
+    "rimraf": "^2.6.3"
+  },
+  "devDependencies": {
+    "chokidar": "^2.1.8",
+    "typescript": "^3.7.4"
+  }
+}
