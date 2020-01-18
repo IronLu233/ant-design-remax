@@ -82,8 +82,14 @@ export default [
 
   {
     name: "Feedback",
-    ChineseName: "操作展示",
-    components: []
+    ChineseName: "操作反馈",
+    components: [
+      {
+        name: "Modal",
+        ChineseName: "对话框",
+        path: "/pages/modal/index"
+      }
+    ]
   },
   {
     name: "Gesture",
