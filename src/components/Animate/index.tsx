@@ -1,34 +1,57 @@
-import React, { FC, ReactElement, useState, useEffect } from "react";
-import { usePrevious } from "react-use";
+import React, { FC, ReactElement, useState } from "react";
+import { usePrevious, useUpdateEffect, useStateList, useList } from "react-use";
 import classNames from "@/utils/classnames";
 import { View } from "../universe";
 
-export interface CSSTransition {
+export interface AnimateProps {
   transitionName?: string;
   className?: string;
   timeout: number;
   in?: boolean;
+  children?: ReactElement;
 }
 
 enum AnimationState {
   ENTER = "enter",
   ENTER_ACTIVE = "enter-active",
+  DONE = "done",
   APPEAR = "appear",
   LEAVE = "leave",
   LEAVE_ACTIVE = "leave-active",
   LEAVED = "leaved"
 }
 
-const Animate: FC<CSSTransition> = props => {
-  const prevProps = usePrevious(props);
-  const [animationState, setAnimationState] = useState(AnimationState.LEAVED);
+const clearIntervals = (intervalIds: NodeJS.Timeout[]) => {
+  intervalIds.forEach(it => clearInterval(it));
+};
 
-  useEffect(() => {
-    if (prevProps?.in === undefined || prevProps.in === props.in) {
+const Animate: FC<AnimateProps> = props => {
+  const prevProps = usePrevious(props);
+  const prevIn = prevProps?.in || false;
+  const [animationState, setAnimationState] = useState(AnimationState.LEAVED);
+  const [
+    intervalIdList,
+    { clear: clearIntervalList, push: appendIntervalList }
+  ] = useList<NodeJS.Timeout>([]);
+
+  useUpdateEffect(() => {
+    if (prevIn === props.in) {
       return;
     }
+    clearIntervals(intervalIdList);
+    clearIntervalList();
+    if (props.in) {
+      const intervalId1 = setTimeout(() => {
+        setAnimationState(AnimationState.APPEAR);
+        setAnimationState(AnimationState.ENTER);
+        setAnimationState(AnimationState.ENTER_ACTIVE);
+      }, 0);
+      const interval2 = setTimeout(() => {
+        setAnimationState(AnimationState.DONE);
+      }, props.timeout);
 
-    if (prevProps.in && !props.in) {
+      appendIntervalList(intervalId1, interval2);
+    } else {
       const intervalId1 = setTimeout(() => {
         setAnimationState(AnimationState.LEAVE);
         setAnimationState(AnimationState.LEAVE_ACTIVE);
@@ -37,30 +60,17 @@ const Animate: FC<CSSTransition> = props => {
       const intervalId2 = setTimeout(() => {
         setAnimationState(AnimationState.LEAVED);
       }, props.timeout);
-      // return () => {
-      //   clearTimeout(intervalId1);
-      //   clearTimeout(intervalId2);
-      // };
-    } else if (!prevProps.in && props.in) {
-      const intervalId1 = setTimeout(() => {
-        setAnimationState(AnimationState.APPEAR);
-        setAnimationState(AnimationState.ENTER);
-        setAnimationState(AnimationState.ENTER_ACTIVE);
-      }, 0);
-
-      // const intervalId2 = setTimeout(() => {
-
-      // }, props.timeout);
-      // return () => {
-      //   clearTimeout(intervalId1);
-      //   clearTimeout(intervalId2);
-      //   console.log("cleared")
-      // };
+      appendIntervalList(intervalId1, intervalId2);
     }
-  }, [props.in, prevProps?.in, props.timeout]);
+  }, [props.in, prevIn, props, intervalIdList]);
 
   const { transitionName, children, className } = props;
   const wrapCls = {
+    [AnimationState.APPEAR]: classNames(
+      className,
+      transitionName,
+      `${transitionName}-appear`
+    ),
     [AnimationState.ENTER]: classNames(
       className,
       transitionName,
@@ -72,11 +82,8 @@ const Animate: FC<CSSTransition> = props => {
       `${transitionName}-enter`,
       `${transitionName}-enter-active`
     ),
-    [AnimationState.APPEAR]: classNames(
-      className,
-      transitionName,
-      `${transitionName}-appear`
-    ),
+    [AnimationState.DONE]: classNames(className),
+
     [AnimationState.LEAVE]: classNames(
       className,
       transitionName,
@@ -88,7 +95,7 @@ const Animate: FC<CSSTransition> = props => {
       `${transitionName}-leave`,
       `${transitionName}-leave-active`
     ),
-    [AnimationState.LEAVED]: undefined
+    [AnimationState.LEAVED]: classNames(className)
   }[animationState];
 
   return React.cloneElement(children as ReactElement, {
@@ -100,8 +107,4 @@ const Animate: FC<CSSTransition> = props => {
   });
 };
 
-Animate.defaultProps = {
-  in: false
-};
-
-export default Animate;
+export default React.memo(Animate);

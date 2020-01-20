@@ -4,17 +4,17 @@ import { View } from "remax/alipay";
 import { ListPropsType } from "./PropsType";
 import "./style/index.less";
 import { ViewProps } from "remax/wechat";
-
+import ListItem from "./ListItem";
 export { default as Item } from "./ListItem";
 
-export interface ListProps extends ListPropsType {
+export interface ListProps extends ListPropsType, ViewProps {
   prefixCls?: string;
   className?: string;
   role?: string;
   style?: React.CSSProperties;
 }
 
-const List: FC<ListProps & ViewProps> = ({
+const List: FC<ListProps> = ({
   prefixCls,
   children,
   className,
@@ -45,4 +45,10 @@ List.defaultProps = {
   prefixCls: "ram-list"
 };
 
-export default List;
+type ListType = FC<ListProps> & {
+  Item: typeof ListItem;
+};
+
+(List as ListType).Item = ListItem;
+
+export default List as ListType;

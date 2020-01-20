@@ -71,7 +71,6 @@ const Button: FC<ButtonProps> = ({
   });
 
   const kids = React.Children.map(children, insertSpace);
-  console.log(kids);
 
   let iconEl;
   if (typeof iconType === "string") {
