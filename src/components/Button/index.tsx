@@ -101,6 +101,7 @@ const Button: FC<ButtonProps> = ({
     >
       <NativeButton
         style={style}
+        disabled={disabled}
         aria-disabled={disabled}
         className={wrapCls}
         {...restProps}

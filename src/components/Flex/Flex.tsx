@@ -3,6 +3,7 @@ import { FlexPropsType as BasePropsType } from "./PropsType";
 import classnames from "@/utils/classnames";
 import { View } from "../universe";
 import { ViewProps } from "remax/alipay";
+import FlexItem from "./FlexItem";
 
 export interface FlexProps extends BasePropsType, ViewProps {
   alignContent?: "start" | "end" | "center" | "between" | "around" | "stretch";
@@ -66,4 +67,10 @@ Flex.defaultProps = {
   align: "center"
 };
 
-export default Flex;
+type FlexType = typeof Flex & {
+  Item: typeof FlexItem;
+};
+
+(Flex as FlexType).Item = FlexItem;
+
+export default Flex as FlexType;

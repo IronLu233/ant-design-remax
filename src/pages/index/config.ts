@@ -23,7 +23,13 @@ export default [
   {
     name: "Navigation",
     ChineseName: "导航",
+
     components: [
+      {
+        name: "Pagination",
+        ChineseName: "分页器",
+        path: "/pages/pagination/index"
+      },
       {
         name: "SegmentedControl",
         ChineseName: "分段器",
