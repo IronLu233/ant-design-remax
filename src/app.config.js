@@ -12,7 +12,8 @@ module.exports = {
     "pages/carousel/index",
     "pages/button/index",
     "pages/modal/index",
-    "pages/pagination/index"
+    "pages/pagination/index",
+    "pages/grid/index"
   ],
   window: {
     defaultTitle: "Remax Antd Demo"

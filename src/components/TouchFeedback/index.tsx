@@ -29,7 +29,7 @@ const TouchFeedback: FC<TouchFeedbackProps> = props => {
   return React.cloneElement(child, {
     hoverClass: disabled ? undefined : classnames(className, activeClassName),
     hoverStartTime: 0,
-    hoverStayTime: 0
+    hoverStayTime: 100
   });
 };
 

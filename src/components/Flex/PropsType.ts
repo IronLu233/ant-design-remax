@@ -1,3 +1,5 @@
+import { ViewProps } from "remax/alipay";
+
 export interface FlexPropsType {
   direction?: "row" | "row-reverse" | "column" | "column-reverse";
   wrap?: "nowrap" | "wrap" | "wrap-reverse";
@@ -6,6 +8,6 @@ export interface FlexPropsType {
   disabled?: boolean;
 }
 
-export interface FlexItemPropsType {
+export interface FlexItemPropsType extends ViewProps {
   disabled?: boolean;
 }

@@ -10,7 +10,7 @@
 | Drawer 抽屉                    | ❌   |                                                                   |
 | Menu 菜单                      | ❌   |                                                                   |
 | NavBar 导航栏                  | ⭕️  | 和小程序的 navigationBar 样式功能基本一致                         |
-| Pagination 分页器              | ❌   |                                                                   |
+| Pagination 分页器              | ❌   | 已完成，开发 i18n 后提供替换按钮的文案                            |
 | Popover 气泡                   | ❌   |                                                                   |
 | SegmentedControl 分段器        | ✅   |                                                                   |
 | TabBar 标签栏                  | ⭕️  | 小程序本身具有这个功能，未来会考虑开发这个组件以支持自定义 TabBar |
@@ -36,7 +36,7 @@
 | Card 卡片                      | ✅   |                                                                   |
 | BuiltInCarousel 走马灯（内置） | ✅   |                                                                   |
 | Carousel 走马灯                | ❌   |                                                                   |
-| Grid 宫格                      | ❌   |                                                                   |
+| Grid 宫格                      | ⏸    | 基本布局已完成，等待 Carousel 组件开发后完善 demo                 |
 | Icon 图标                      | ❌   |                                                                   |
 | List 列表                      | ✅   |                                                                   |
 | NoticeBar 通告栏               | ❌   |                                                                   |

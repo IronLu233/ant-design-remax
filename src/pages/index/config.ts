@@ -64,14 +64,19 @@ export default [
         path: "/pages/badge/index"
       },
       {
+        name: "Carousel",
+        ChineseName: "走马灯",
+        path: "/pages/carousel/index"
+      },
+      {
         name: "Card",
         ChineseName: "卡片",
         path: "/pages/card/index"
       },
       {
-        name: "Carousel",
-        ChineseName: "走马灯",
-        path: "/pages/carousel/index"
+        name: "Grid",
+        ChineseName: "宫格",
+        path: "/pages/grid/index"
       },
       {
         name: "Icon",

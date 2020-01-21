@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 
 export interface DataItem {
   icon?: any;
@@ -15,6 +15,6 @@ export interface GridPropsType {
   onClick?: (dataItem: DataItem | undefined, itemIndex: number) => void;
   renderItem?: (
     dataItem: DataItem | undefined,
-    itemIndex: number,
+    itemIndex: number
   ) => React.ReactElement<any>;
 }
