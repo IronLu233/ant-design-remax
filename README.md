@@ -13,7 +13,7 @@
 | Pagination 分页器              | ❌   | 已完成，开发 i18n 后提供替换按钮的文案                            |
 | Popover 气泡                   | ❌   |                                                                   |
 | SegmentedControl 分段器        | ✅   |                                                                   |
-| TabBar 标签栏                  | ⭕️  | 小程序本身具有这个功能，未来会考虑开发这个组件以支持自定义 TabBar |
+| **Ta**bBar 标签栏              | ⭕️  | 小程序本身具有这个功能，未来会考虑开发这个组件以支持自定义 TabBar |
 | Tabs 标签页                    | ❌   |                                                                   |
 | Button 按钮                    | 🐛   | 图标未正常显示                                                    |
 | Calendar 日历                  | ❌   |                                                                   |
@@ -41,11 +41,11 @@
 | List 列表                      | ✅   |                                                                   |
 | NoticeBar 通告栏               | ❌   |                                                                   |
 | Steps 步骤条                   | ❌   |                                                                   |
+| Tag 标签                       | ✅   |                                                                   |
 | ActionSheet 动作面板           | ❌   |                                                                   |
 | ActivityIndicator 活动指示器   | ❌   |                                                                   |
 | Modal 对话框                   | ❌   |                                                                   |
 | Progress 进度条                | ❌   |                                                                   |
-| Toast 轻提示                   | ❌   |                                                                   |
 | Toast 轻提示                   | ❌   |                                                                   |
 | PullToRefresh 拉动刷新         | ⭕️  | 小程序自带，不需要                                                |
 | ListView 长列表                | ❌   |                                                                   |

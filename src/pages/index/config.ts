@@ -87,6 +87,11 @@ export default [
         name: "List",
         ChineseName: "列表",
         path: "/pages/list/index"
+      },
+      {
+        name: "Tag",
+        ChineseName: "标签",
+        path: "/pages/tag/index"
       }
     ]
   },
