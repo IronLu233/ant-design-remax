@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useCallback } from "react";
 import classnames from "@/utils/classnames";
 import Icon from "../Icon";
 import { ButtonPropsType } from "./PropsType";
@@ -94,6 +94,13 @@ const Button: FC<ButtonProps> = ({
     });
   }
 
+  const handleClick = useCallback(
+    (e: any) => {
+      disabled && onTap?.(e);
+    },
+    [onTap]
+  );
+
   return (
     <TouchFeedback
       activeClassName={activeClassName || `${prefixCls}-active`}
@@ -101,11 +108,11 @@ const Button: FC<ButtonProps> = ({
     >
       <NativeButton
         style={style}
-        disabled={disabled}
         aria-disabled={disabled}
         className={wrapCls}
+        plain
         {...restProps}
-        onTap={onTap}
+        onClick={handleClick}
       >
         {iconEl}
         {kids}

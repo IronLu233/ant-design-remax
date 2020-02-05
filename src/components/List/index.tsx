@@ -25,7 +25,7 @@ const List: FC<ListProps> = ({
 }) => {
   const wrapCls = classnames(prefixCls, className);
   return (
-    <View className={wrapCls} {...restProps}>
+    <View className={wrapCls} {...restProps} style={style}>
       {Boolean(renderHeader) && (
         <View className={`${prefixCls}-header`}>
           {typeof renderHeader === "function" ? renderHeader() : renderHeader}

@@ -7,6 +7,7 @@ import {
   BriefProps as BriefBasePropsType
 } from "./PropsType";
 import TouchFeedback, { TouchProps } from "../TouchFeedback";
+import Brief from "./Brief";
 
 export interface ListItemProps extends ListItemBasePropsType, TouchProps {
   prefixCls?: string;
@@ -95,4 +96,8 @@ ListItem.defaultProps = {
   wrap: false
 };
 
-export default ListItem;
+type ListItemType = typeof ListItem & { Brief: typeof Brief };
+
+(ListItem as ListItemType).Brief = Brief;
+
+export default ListItem as ListItemType;

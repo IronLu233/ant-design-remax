@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont";
-  src: url("./iconfont.ttf?t=1579073174218") format("truetype");
+  src: url("./iconfont.ttf") format("truetype");
 }
 
 @import "../../style/themes/default.less";
@@ -41,10 +41,10 @@
   }
 
   &-loading {
-    animation: cirle-anim 1s linear infinite;
+    animation: circle-anim 1s linear infinite;
   }
 
-  @keyframes cirle-anim {
+  @keyframes circle-anim {
     100% {
       transform: rotate(360deg);
     }
@@ -97,4 +97,8 @@
 
 .ram-icon-search:before {
   content: "\e8ef";
+}
+
+.ram-icon-loading:before {
+  content: "\e73c";
 }
