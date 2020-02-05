@@ -2,6 +2,12 @@
 @import "../../style/themes/default.less";
 @buttonPrefixCls: ram-button;
 
+.button-bg-color(@color) {
+  && {
+    background-color: @color;
+  }
+}
+
 .@{buttonPrefixCls} {
   // do not use width:100%, can not set margin
   display: block;
@@ -21,8 +27,7 @@
 
   // default
   color: @color-text-base;
-  background-color: @fill-base;
-
+  .button-bg-color(@fill-base);
   .hairline("all", @border-color-base, @radius-md);
 
   // Multiple buttons inline arranged, the last one border-right may not display
@@ -33,7 +38,7 @@
   }
 
   &&-active {
-    background-color: @fill-tap;
+    .button-bg-color(@fill-tap);
   }
   &&-disabled {
     color: fade(@color-text-base, 30%);
@@ -42,12 +47,12 @@
 
   &-primary {
     color: @color-text-base-inverse;
-    background-color: @primary-button-fill;
+    .button-bg-color(@primary-button-fill);
     .hairline("all", @primary-button-fill, @radius-md);
 
     &.@{buttonPrefixCls}-active {
       color: fade(@color-text-base-inverse, 30%);
-      background-color: @primary-button-fill-tap;
+      .button-bg-color(@primary-button-fill-tap);
     }
     &.@{buttonPrefixCls}-disabled {
       color: fade(@color-text-base-inverse, 60%);
@@ -57,12 +62,12 @@
 
   &-ghost {
     color: @ghost-button-color;
-    background-color: transparent;
+    .button-bg-color(transparent);
     .hairline("all", @ghost-button-color, @radius-md);
 
     &.@{buttonPrefixCls}-active {
       color: @ghost-button-fill-tap;
-      background-color: transparent;
+      .button-bg-color(transparent);
       .hairline("all", @ghost-button-fill-tap, @radius-md);
     }
     &.@{buttonPrefixCls}-disabled {
@@ -74,11 +79,11 @@
 
   &-warning {
     color: @color-text-base-inverse;
-    background-color: @warning-button-fill;
+    .button-bg-color(@warning-button-fill);
 
     &.@{buttonPrefixCls}-active {
       color: fade(@color-text-base-inverse, 30%);
-      background-color: @warning-button-fill-tap;
+      .button-bg-color(@warning-button-fill-tap);
     }
     &.@{buttonPrefixCls}-disabled {
       color: fade(@color-text-base-inverse, 60%);

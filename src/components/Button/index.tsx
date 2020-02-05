@@ -103,10 +103,13 @@ const Button: FC<ButtonProps> = ({
 
   return (
     <TouchFeedback
-      activeClassName={activeClassName || `${prefixCls}-active`}
+      activeClassName={
+        disabled ? undefined : activeClassName || `${prefixCls}-active`
+      }
       disabled={disabled}
     >
       <NativeButton
+        disabled={disabled}
         style={style}
         aria-disabled={disabled}
         className={wrapCls}
