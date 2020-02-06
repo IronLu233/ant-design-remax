@@ -13,9 +13,9 @@
 | Pagination 分页器              | ❌   | 已完成，开发 i18n 后提供替换按钮的文案                            |
 | Popover 气泡                   | ❌   |                                                                   |
 | SegmentedControl 分段器        | ✅   |                                                                   |
-| **Ta**bBar 标签栏              | ⭕️  | 小程序本身具有这个功能，未来会考虑开发这个组件以支持自定义 TabBar |
+| TabBar 标签栏                  | ⭕️  | 小程序本身具有这个功能，未来会考虑开发这个组件以支持自定义 TabBar |
 | Tabs 标签页                    | ❌   |                                                                   |
-| Button 按钮                    | 🐛   | 图标未正常显示                                                    |
+| Button 按钮                    | ✅   |                                                                   |
 | Calendar 日历                  | ❌   |                                                                   |
 | Checkbox 复选框                | ❌   |                                                                   |
 | DatePicker 日期选择            | ❌   |                                                                   |
