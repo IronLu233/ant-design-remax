@@ -14,7 +14,7 @@ export interface ListItemProps extends ListItemBasePropsType, TouchProps {
   className?: string;
   role?: string;
   style?: React.CSSProperties;
-  onTap?: React.MouseEventHandler<HTMLDivElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export interface BriefProps extends BriefBasePropsType {
@@ -35,7 +35,7 @@ const ListItem: FC<ListItemProps> = ({
   thumb,
   extra,
   arrow,
-  onTap,
+  onClick,
   ...restProps
 }) => {
   const wrapCls = classnames(`${prefixCls}-item`, className, {
@@ -58,7 +58,7 @@ const ListItem: FC<ListItemProps> = ({
   });
 
   const content = (
-    <View {...restProps} onTap={onTap} className={wrapCls}>
+    <View {...restProps} onTap={onClick} className={wrapCls}>
       {Boolean(thumb) && (
         <View className={`${prefixCls}-thumb`}>
           {typeof thumb === "string" ? <Image src={thumb} /> : thumb}
@@ -80,7 +80,7 @@ const ListItem: FC<ListItemProps> = ({
 
   return (
     <TouchFeedback
-      disabled={disabled || !onTap}
+      disabled={disabled || !onClick}
       activeClassName={`${prefixCls}-item-active`}
     >
       {content}

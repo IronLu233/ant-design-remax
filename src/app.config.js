@@ -14,7 +14,8 @@ module.exports = {
     "pages/modal/index",
     "pages/pagination/index",
     "pages/grid/index",
-    "pages/tag/index"
+    "pages/tag/index",
+    "pages/checkbox/index"
   ],
   window: {
     defaultTitle: "Remax Antd Demo"

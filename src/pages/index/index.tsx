@@ -22,7 +22,7 @@ export default () => {
         <View className="ram-demo-bd">
           {config.map((cate, index) => (
             <List
-              onTap={() => updateAt(index, !cateState[index])}
+              onClick={() => updateAt(index, !cateState[index])}
               key={`${cate.name}-${index}`}
               className={cateState[index] ? "category-open" : "category-closed"}
               renderHeader={() => (
@@ -38,7 +38,7 @@ export default () => {
                 <Item
                   key={`${cate.name}-${item.name}`}
                   arrow="horizontal"
-                  onTap={e => {
+                  onClick={e => {
                     navigateTo({
                       url: item.path
                     });

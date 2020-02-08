@@ -17,7 +17,7 @@
 | Tabs 标签页                    | ❌   |                                                                   |
 | Button 按钮                    | ✅   |                                                                   |
 | Calendar 日历                  | ❌   |                                                                   |
-| Checkbox 复选框                | ❌   |                                                                   |
+| Checkbox 复选框                | ✅   |                                                                   |
 | DatePicker 日期选择            | ❌   |                                                                   |
 | DatePickerView 日期选择视图    | ❌   |                                                                   |
 | ImagePiker 图片选择器          | ❌   |                                                                   |

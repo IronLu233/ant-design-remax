@@ -15,14 +15,14 @@ export default () => {
         </View>
       </View>
       <List renderHeader={() => "Subtitle"} className="my-list">
-        <Item arrow="horizontal" multipleLine onTap={() => {}}>
+        <Item arrow="horizontal" multipleLine onClick={() => {}}>
           Title <Brief>subtitle</Brief>
         </Item>
         <Item
           arrow="horizontal"
           thumb="https://zos.alipayobjects.com/rmsportal/dNuvNrtqUztHCwM.png"
           multipleLine
-          onTap={() => {}}
+          onClick={() => {}}
         >
           Title <Brief>subtitle</Brief>
         </Item>
@@ -34,10 +34,10 @@ export default () => {
         className="my-list"
       >
         <Item>Title</Item>
-        <Item arrow="horizontal" onTap={() => {}}>
+        <Item arrow="horizontal" onClick={() => {}}>
           Title
         </Item>
-        <Item extra="extra content" arrow="horizontal" onTap={() => {}}>
+        <Item extra="extra content" arrow="horizontal" onClick={() => {}}>
           Title
         </Item>
         <Item

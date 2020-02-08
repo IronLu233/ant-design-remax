@@ -46,6 +46,11 @@ export default [
         name: "Button",
         ChineseName: "按钮",
         path: "/pages/button/index"
+      },
+      {
+        name: "Checkbox",
+        ChineseName: "复选框",
+        path: "/pages/checkbox/index"
       }
     ]
   },
