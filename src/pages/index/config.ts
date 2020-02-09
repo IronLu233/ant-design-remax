@@ -51,6 +51,11 @@ export default [
         name: "Checkbox",
         ChineseName: "复选框",
         path: "/pages/checkbox/index"
+      },
+      {
+        name: "Picker",
+        ChineseName: "选择器",
+        path: "/pages/pickerView/index"
       }
     ]
   },

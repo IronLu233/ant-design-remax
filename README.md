@@ -23,7 +23,7 @@
 | ImagePiker 图片选择器          | ❌   |                                                                   |
 | InputItem 文本输入             | ❌   |                                                                   |
 | Picker 选择器                  | ❌   |                                                                   |
-| PickerView 选择器视图          | ❌   |                                                                   |
+| PickerView 选择器视图          | ✅   |                                                                   |
 | Radio 单选框                   | ❌   |                                                                   |
 | Range 区域选择                 | ❌   |                                                                   |
 | SearchBar 搜索栏               | ❌   |                                                                   |

@@ -20,8 +20,8 @@
     "lodash.range": "^3.2.0",
     "react": "^16.8.6",
     "react-use": "^13.15.0",
-    "remax": "^1.11.2",
-    "remax-cli": "^1.11.2",
+    "remax": "^1.12.5",
+    "remax-cli": "^1.12.5",
     "rimraf": "^2.6.3"
   },
   "devDependencies": {
