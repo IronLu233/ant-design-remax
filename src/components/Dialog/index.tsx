@@ -19,8 +19,8 @@ interface MaskProps {
   visible?: boolean;
 }
 
-const ignoreScroll = (e: Event) => {
-  e?.stopPropagation();
+const ignoreScroll = () => {
+  // e?.stopPropagation();
 };
 
 const Mask: FC<MaskProps> = ({
@@ -80,6 +80,15 @@ const Dialog: FC<DialogPropTypes> = ({
     }
   }, [prevVisible, visible, timeout]);
 
+  const onMaskClick = useCallback(
+    (e: any) => {
+      // HACK: 别问，问就是黑科技
+      const isClickMask = e.target.dataset.rid === e.target.targetDataset.rid;
+      if (isClickMask) onClose?.();
+    },
+    [onClose]
+  );
+
   const footer = Boolean(restProps.footer) && (
     <View className={`${prefixCls}-footer`}>{restProps.footer}</View>
   );
@@ -127,6 +136,7 @@ const Dialog: FC<DialogPropTypes> = ({
         visible={visible}
       />
       <View
+        onClick={onMaskClick}
         data-type="content"
         style={style}
         className={`${prefixCls}-wrap ${wrapClassName || ""}`}
