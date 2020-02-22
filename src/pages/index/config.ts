@@ -56,6 +56,11 @@ export default [
         name: "Picker",
         ChineseName: "选择器",
         path: "/pages/pickerView/index"
+      },
+      {
+        name: "Picker",
+        ChineseName: "选择器",
+        path: "/pages/picker/index"
       }
     ]
   },
